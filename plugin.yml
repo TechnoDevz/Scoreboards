@@ -1,0 +1,7 @@
+name: Scoreboards
+api: [3.0.0, 3.1.0, 3.2.0, 3.3.0, 4.0.0]
+main: Techno\Main
+version: 1.0.0
+author: TechnoDevz
+
+description: Makes a scoreboard to your server
