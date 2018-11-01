@@ -1,6 +1,6 @@
 <?php
 
-namespace TechnoDevsScoreBoard
+namespace TechnoDevsScoreBoard;
 
 use pocketmine\Player;
 use pocketmine\Server;
