@@ -1,6 +1,6 @@
 <?php
 
-namespace ElitepvpScoreboard;
+namespace TechnoDevsScoreBoard
 
 use pocketmine\Player;
 use pocketmine\Server;
@@ -16,7 +16,7 @@ use ElitepvpScoreboard\Main;
 class Main extends PluginBase implements Listener{
 
     public function onEnable(){
-        $this->getLogger()->info("[Enable] by. DeadOnBushPH Subscribe");
+        $this->getLogger()->info("[TechnoDevsScoreBoard] Enabled...");
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->eco = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
 		$this->pureperms = $this->getServer()->getPluginManager()->getPlugin("PurePerms");
