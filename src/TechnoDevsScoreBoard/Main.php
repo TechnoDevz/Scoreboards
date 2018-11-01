@@ -11,7 +11,7 @@ use pocketmine\network\mcpe\protocol\SetScorePacket;
 use pocketmine\network\mcpe\protocol\types\ScorePacketEntry;
 use pocketmine\utils\TextFormat as C;
 use pocketmine\event\player\PlayerJoinEvent;
-use ElitepvpScoreboard\Main;
+use TechnoDevsScoreBoard\Main;
 
 class Main extends PluginBase implements Listener{
 
