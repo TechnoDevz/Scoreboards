@@ -73,7 +73,7 @@ class Main extends PluginBase implements Listener{
         $entrie = new ScorePacketEntry();
         $entrie->objectiveName = "test";
         $entrie->type = ScorePacketEntry::TYPE_FAKE_PLAYER;
-        $entrie->customName = str_repeat(" ", 5) . "" . tr_repeat(" ", 3);
+        $entrie->customName = str_repeat(" ", 5) . "" . str_repeat(" ", 3);
         $entrie->score = 4;
         $entrie->scoreboardId = 4;
         $pk4 = new SetScorePacket();
