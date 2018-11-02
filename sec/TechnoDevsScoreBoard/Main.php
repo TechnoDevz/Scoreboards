@@ -1,6 +1,6 @@
 <?php
 
-namespace ElitepvpScoreboard;
+namespace TechnoDevsScoreBoard;
 
 use pocketmine\Player;
 use pocketmine\Server;
