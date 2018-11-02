@@ -1,6 +1,6 @@
 <?php
 
-namespace ElitepvpScoreboard;
+namespace TechnoDevsScoreBoard;
 
 use pocketmine\Player;
 use pocketmine\Server;
@@ -11,12 +11,12 @@ use pocketmine\network\mcpe\protocol\SetScorePacket;
 use pocketmine\network\mcpe\protocol\types\ScorePacketEntry;
 use pocketmine\utils\TextFormat as C;
 use pocketmine\event\player\PlayerJoinEvent;
-use ElitepvpScoreboard\Main;
+use TechnoDevsScoreBoard\Main;
 
 class Main extends PluginBase implements Listener{
 
     public function onEnable(){
-        $this->getLogger()->info("[Enable] by. DeadOnBushPH Subscribe");
+        $this->getLogger()->info("[ScoreBoard] Enabled By TechnoDevs....");
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->eco = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
 		$this->pureperms = $this->getServer()->getPluginManager()->getPlugin("PurePerms");
@@ -72,7 +72,7 @@ class Main extends PluginBase implements Listener{
         $entrie = new ScorePacketEntry();
         $entrie->objectiveName = "test";
         $entrie->type = ScorePacketEntry::TYPE_FAKE_PLAYER;
-        $entrie->customName = str_repeat(" ", 5) . "" . str_repeat(" ", 3);
+        $entrie->customName = str_repeat(" ", 5) . "Deaths: §f" . $group . str_repeat(" ", 3);
         $entrie->score = 4;
         $entrie->scoreboardId = 4;
         $pk4 = new SetScorePacket();
