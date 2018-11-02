@@ -40,11 +40,12 @@ class Main extends PluginBase implements Listener{
         $name = $player->getName();
         $money = $this->eco->myMoney($player);
         $group = $this->pureperms->getUserDataMgr($player)->getGroup($player);
+	$deaths = $player->getDeaths($name);
 
         $pk = new SetDisplayObjectivePacket();
         $pk->displaySlot = "sidebar";
         $pk->objectiveName = "test";
-        $pk->displayName = "§l§eWELCOME PLAYER§r";
+        $pk->displayName = "§dMN§fPE§7 - §6SkyBlock";
         $pk->criteriaName = "dummy";
         $pk->sortOrder = 0;
         $player->sendDataPacket($pk);
@@ -52,7 +53,7 @@ class Main extends PluginBase implements Listener{
         $entrie = new ScorePacketEntry();
         $entrie->objectiveName = "test";
         $entrie->type = ScorePacketEntry::TYPE_FAKE_PLAYER;
-        $entrie->customName = str_repeat(" ", 5) . "§aName:" . str_repeat(" ", 3);
+        $entrie->customName = str_repeat(" ", 5) . "§bACCOUNT:" . str_repeat(" ", 3);
         $entrie->score = 2;
         $entrie->scoreboardId = 2;
         $pk2 = new SetScorePacket();
@@ -62,7 +63,7 @@ class Main extends PluginBase implements Listener{
         $entrie = new ScorePacketEntry();
         $entrie->objectiveName = "test";
         $entrie->type = ScorePacketEntry::TYPE_FAKE_PLAYER;
-        $entrie->customName = str_repeat(" ", 5) . $name . str_repeat(" ", 3);
+        $entrie->customName = str_repeat(" ", 5) . §a $name . str_repeat(" ", 3);
         $entrie->score = 3;
         $entrie->scoreboardId = 3;
         $pk3 = new SetScorePacket();
@@ -72,7 +73,7 @@ class Main extends PluginBase implements Listener{
         $entrie = new ScorePacketEntry();
         $entrie->objectiveName = "test";
         $entrie->type = ScorePacketEntry::TYPE_FAKE_PLAYER;
-        $entrie->customName = str_repeat(" ", 5) . "Deaths: §f" . $group . str_repeat(" ", 3);
+        $entrie->customName = str_repeat(" ", 5) . "" . tr_repeat(" ", 3);
         $entrie->score = 4;
         $entrie->scoreboardId = 4;
         $pk4 = new SetScorePacket();
