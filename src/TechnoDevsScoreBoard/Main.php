@@ -40,6 +40,8 @@ class Main extends PluginBase implements Listener{
         $name = $player->getName();
         $money = $this->eco->myMoney($player);
         $group = $this->pureperms->getUserDataMgr($player)->getGroup($player);
+	$deaths = $player->getDeaths($name);
+
 
         $pk = new SetDisplayObjectivePacket();
         $pk->displaySlot = "sidebar";
@@ -59,10 +61,11 @@ class Main extends PluginBase implements Listener{
         $pk2->type = 0;
         $pk2->entries[] = $entrie;
         $player->sendDataPacket($pk2);
+	$this->numberPacket($deaths);
         $entrie = new ScorePacketEntry();
         $entrie->objectiveName = "test";
         $entrie->type = ScorePacketEntry::TYPE_FAKE_PLAYER;
-        $entrie->customName = str_repeat(" ", 5) . $name . str_repeat(" ", 3);
+        $entrie->customName = str_repeat("DEATHS", 5) . $name . str_repeat(" ", 3);
         $entrie->score = 3;
         $entrie->scoreboardId = 3;
         $pk3 = new SetScorePacket();
