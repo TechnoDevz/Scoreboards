@@ -11,12 +11,12 @@ use pocketmine\network\mcpe\protocol\SetScorePacket;
 use pocketmine\network\mcpe\protocol\types\ScorePacketEntry;
 use pocketmine\utils\TextFormat as C;
 use pocketmine\event\player\PlayerJoinEvent;
-use ElitepvpScoreboard\Main;
+use TechnoDevsScoreBoard\Main;
 
 class Main extends PluginBase implements Listener{
 
     public function onEnable(){
-        $this->getLogger()->info("[Enable] by. DeadOnBushPH Subscribe");
+        $this->getLogger()->info("[ScoreBoards] By TechnoDevs Enabled");
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->eco = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
 		$this->pureperms = $this->getServer()->getPluginManager()->getPlugin("PurePerms");
@@ -44,7 +44,7 @@ class Main extends PluginBase implements Listener{
         $pk = new SetDisplayObjectivePacket();
         $pk->displaySlot = "sidebar";
         $pk->objectiveName = "test";
-        $pk->displayName = "§l§eWELCOME PLAYER§r";
+        $pk->displayName = "§dMN§fPE§7 - §6SkyBlock";
         $pk->criteriaName = "dummy";
         $pk->sortOrder = 0;
         $player->sendDataPacket($pk);
@@ -52,7 +52,7 @@ class Main extends PluginBase implements Listener{
         $entrie = new ScorePacketEntry();
         $entrie->objectiveName = "test";
         $entrie->type = ScorePacketEntry::TYPE_FAKE_PLAYER;
-        $entrie->customName = str_repeat(" ", 5) . "§aName:" . str_repeat(" ", 3);
+        $entrie->customName = str_repeat(" ", 5) . "§aACCOUNT" . str_repeat(" ", 3);
         $entrie->score = 2;
         $entrie->scoreboardId = 2;
         $pk2 = new SetScorePacket();
@@ -62,7 +62,7 @@ class Main extends PluginBase implements Listener{
         $entrie = new ScorePacketEntry();
         $entrie->objectiveName = "test";
         $entrie->type = ScorePacketEntry::TYPE_FAKE_PLAYER;
-        $entrie->customName = str_repeat(" ", 5) . $name . str_repeat(" ", 3);
+        $entrie->customName = str_repeat(" ", 5) . "§a", $name . str_repeat(" ", 3);
         $entrie->score = 3;
         $entrie->scoreboardId = 3;
         $pk3 = new SetScorePacket();
